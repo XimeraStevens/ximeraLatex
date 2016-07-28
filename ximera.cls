@@ -383,7 +383,7 @@
 \newcommand{\includeinteractive}[1]{Interactive}
 
 %HTML 
-\NewEnviron{html}{\textbf{INTERACTIVE NOT AVAILABLE.}}
+\NewEnviron{html}{\textbf{Custom HTML code (not rendered to pdf).}}
 	
 % --------------------------------------------------------------------
 % Hyperlinks to outside documents
