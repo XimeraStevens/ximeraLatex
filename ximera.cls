@@ -379,6 +379,9 @@
 % Embedded graph (in math mode)
 \newcommand{\graph}[2][]{\text{Graph of $#2$}}
 
+% Gradarius
+\newcommand{\grdlink}[3][Gradarius]{\href{https://staging.gradarius.com/controller/grdstandalone/student.html\#!/courses/#2/assignments/#3}{#1}}
+
 % Interactive element
 \newcommand{\includeinteractive}[1]{Interactive}
 
@@ -1052,5 +1055,3 @@ Xarma Boost \ifhandout\theproblem\else\ifshuffle\theproblem.\theproblemType\else
 
     \makeatother
 \fi
-
-
