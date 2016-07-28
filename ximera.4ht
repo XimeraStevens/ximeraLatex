@@ -231,8 +231,8 @@
 
 \renewcommand*{\link}[2][]{%
 \ifthenelse{\equal{#1}{}}%
-{\HCode{<a href="#2">}LINK\HCode{</a>}}
-{\HCode{<a href="#2">}#1\HCode{</a>}}}
+{\HCode{<a href="#2" target="_blank">}LINK\HCode{</a>}}
+{\HCode{<a href="#2" target="_blank">}#1\HCode{</a>}}}
 
 % This connects back to ximera.cls code which makes lim into display math
 % \newcommand{\prelim}{\lim}
