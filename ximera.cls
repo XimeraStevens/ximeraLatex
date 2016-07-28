@@ -366,10 +366,10 @@
 % Interactives
 
 %Geogebra link
-\newcommand{\geogebra}[3]{Geogebra link: \url{https://tube.geogebra.org/m/#1}}
+\newcommand{\geogebra}[3]{Geogebra link: \url{https://tube.geogebra.org/m/#1} (#2x#3)}
 
 %Desmos link
-\newcommand{\desmos}[3]{Desmos link: \url{https://www.desmos.com/calculator/#1}}
+\newcommand{\desmos}[3]{Desmos link: \url{https://www.desmos.com/calculator/#1} (#2x#3)}
 
 % Google Spreadsheet link (read only)
 \newcommand{\googleSheet}[5]{%
