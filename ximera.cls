@@ -382,6 +382,9 @@
 % Gradarius
 \newcommand{\grdlink}[3][Gradarius]{\href{https://staging.gradarius.com/controller/grdstandalone/student.html\#!/courses/#2/assignments/#3}{#1}}
 
+% Gradarius cell command
+\newcommand{\grdcell}[2]{\newline\framebox{Gradarius cell for #1 of #2}}
+
 % Interactive element
 \newcommand{\includeinteractive}[1]{Interactive}
 
@@ -821,7 +824,7 @@ Xarma Boost \ifhandout\theproblem\else\ifshuffle\theproblem.\theproblemType\else
 \end{trivlist}
 \else\egroup\fi}
 
-\newenvironment{gradarius}[3][2in]
+\newenvironment{gradarius}[1][2in]
 {\iffirstproblem
 \def\spaceatend{#1}\refstepcounter{problem}\refstepcounter{problemType}
 \begin{trivlist}\item[\hskip\labelsep\sffamily\bfseries

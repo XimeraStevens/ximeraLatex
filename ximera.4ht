@@ -50,9 +50,7 @@
 \ConfigureQuestionEnv{exploration}{exploration}
 \ConfigureQuestionEnv{xarmaBoost}{xarma-boost}
 \ConfigureQuestionEnv{hint}{hint}
-
-\renewenvironment{gradarius}[3][]{\refstepcounter{problem}\HCode{<div class="grdinfo" data-course-id="#2" data-assignment-id="#3" hidden>&nbsp</div>}}{}%
-\ConfigureEnv{gradarius}{\stepcounter{identification}\ifvmode \IgnorePar\fi \EndP\HCode{<div class="problem-environment gradarius" id="problem\arabic{identification}">}}{\HCode{</div>}\IgnoreIndent}{}{}%
+\ConfigureQuestionEnv{gradarius}{gradarius}
 
 \renewenvironment{freeResponse}{\refstepcounter{problem}}{}%
 \ConfigureEnv{freeResponse}{\stepcounter{identification}\ifvmode \IgnorePar\fi \EndP\HCode{<div class="free-response" id="problem\arabic{identification}">}}{\HCode{</div>}\IgnoreIndent}{}{}%
@@ -168,7 +166,7 @@
 % video environments
 
 % Youtube command. Requires id.
-\renewcommand{\youtube}[1]{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="video youtube-player" data-youtube="#1">_</div>}}
+\renewcommand{\youtube}[1]{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="video youtube-player" data-youtube="#1"> </div>}}
 
 % Image environment doesn't actually work in tex4ht as defined with
 % NewEnviron; so this renewenvironment is needed.  image-environment
@@ -237,7 +235,14 @@
 {\HCode{<a href="#2" target="_blank">}LINK\HCode{</a>}}
 {\HCode{<a href="#2" target="_blank">}#1\HCode{</a>}}}
 
-\renewcommand{\grdlink}[3][Gradarius]{\HCode{<a href="https://staging.gradarius.com/controller/grdstandalone/student.html\#!/courses/#2/assignments/#3" target="_blank">}#1\HCode{</a>}}
+\renewcommand{\grdcell}[2]{\stepcounter{identification}\ifvmode \IgnorePar\fi \EndP \HCode{
+  <div id="gradarius\arabic{identification}" ng-controller="grdXimeraCtrl" grd-assist-status class="gradarius-environment">
+    <div class="grd-cell-info" data-type="#1" hidden>}#2\HCode{</div>
+    <grd-assist-status-icon model="::assistModel"> </grd-assist-status-icon>
+    <grd-math-cell model="::mathModel" on-save="::validate" on-wysiwyg="::wysiwyg"> </grd-math-cell>
+    <grd-assist-status-area> </grd-assist-status-area>
+  </div>
+}\IgnoreIndent}
 
 % This connects back to ximera.cls code which makes lim into display math
 % \newcommand{\prelim}{\lim}
