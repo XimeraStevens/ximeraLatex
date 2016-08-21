@@ -482,6 +482,7 @@
 %defining keys for answer command key=value pairs
 \define@key{answer}{given}[true]{\def\ans@given{#1}}
 \define@key{answer}{tolerance}{\def\ans@tol{#1}} %note: currently no affect on pdf output
+\define@key{answer}{label}{\def\ans@label{#1}} %note: permanent label to identify answers
 
 %setting default values for answer command key=value pairs
 \setkeys{answer}{given=false}
