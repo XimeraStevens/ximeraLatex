@@ -235,14 +235,7 @@
 {\HCode{<a href="#2" target="_blank">}LINK\HCode{</a>}}
 {\HCode{<a href="#2" target="_blank">}#1\HCode{</a>}}}
 
-\renewcommand{\grdcell}[2]{\stepcounter{identification}\ifvmode \IgnorePar\fi \EndP \HCode{
-  <div id="gradarius\arabic{identification}" ng-controller="grdXimeraCtrl" grd-assist-status class="gradarius-environment">
-    <div class="grd-cell-info" data-type="#1" hidden>}#2\HCode{</div>
-    <grd-assist-status-icon model="::assistModel"> </grd-assist-status-icon>
-    <grd-math-cell model="::mathModel" on-save="::validate" on-wysiwyg="::wysiwyg"> </grd-math-cell>
-    <grd-assist-status-area> </grd-assist-status-area>
-  </div>
-}\IgnoreIndent}
+\renewcommand{\grdcell}[2][]{\HCode{<div class="grdcell">}#2\HCode{</div>}}
 
 % This connects back to ximera.cls code which makes lim into display math
 % \newcommand{\prelim}{\lim}

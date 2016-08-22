@@ -383,7 +383,19 @@
 \newcommand{\grdlink}[3][Gradarius]{\href{https://staging.gradarius.com/controller/grdstandalone/student.html\#!/courses/#2/assignments/#3}{#1}}
 
 % Gradarius cell command
-\newcommand{\grdcell}[2]{\newline\framebox{Gradarius cell for #1 of #2}}
+\makeatletter
+
+\define@key{grdcell}{type}{\def\grd@type{#1}} %note: type of Gradarius cell
+\define@key{grdcell}{label}{\def\grd@label{#1}} %note: permanent label to identify Gradarius cells
+
+\newcommand{\grdcell}[2][]{
+  \setkeys{grdcell}{#1}
+  \newline
+  \underset{\scriptstyle\mathrm{Gradarius}}{\fbox{\grd@type~of~\ensuremath{#2}}}
+  \newline
+}
+
+\makeatother
 
 % Interactive element
 \newcommand{\includeinteractive}[1]{Interactive}
@@ -493,7 +505,7 @@
 	\ifthenelse{\boolean{\ans@given}}
 		{\ifhandout #2\else\underset{\scriptstyle\mathrm{given}}{\fbox{\ensuremath{#2}}}\fi}
 		{\ifhandout\fbox{\rm{?}}\else\fbox{\ensuremath{#2}}\fi}}% show answer in box outside handout mode
-             
+
 \makeatother
 
 %% multiple choice environment
