@@ -527,10 +527,18 @@
 \newcommand{\otherchoice}[2][]{\ignorespaces\ifthenelse{\boolean{#1}}{#2}{}\ignorespaces}
 %%%
 
+\makeatletter
 
-\newenvironment{multipleChoice}[1][]
-{\begin{trivlist}\item[\hskip \labelsep\small\bfseries Multiple Choice:]\hfil\begin{enumerate}}
-{\end{enumerate}\end{trivlist}}
+\define@key{multipleChoice}{label}{\def\mltchoice@label{#1}} %note: permanent label to identify answers
+
+\newenvironment{multipleChoice}[1][]{
+  \setkeys{multipleChoice}{#1}
+  \begin{trivlist}\item[\hskip \labelsep\small\bfseries Multiple Choice:]\hfil\begin{enumerate}
+}{
+  \end{enumerate}\end{trivlist}
+}
+
+\makeatother
 
 %multipleChoice* is for internal use only! (used in wordChoice)
 \newenvironment{multipleChoice*}[1][]
@@ -546,9 +554,19 @@
 %note, it is coded as a single line to avoid unwanted spaces in "given" mode
 \newcommand{\wordChoice}[1]{\let\choicetemp\choice\ifwordchoicegiven\def\choice{\otherchoice}\begin{multipleChoice**}#1\end{multipleChoice**}\else\begin{multipleChoice*}#1\end{multipleChoice*}\fi\let\choice\choicetemp}
 
-\newenvironment{selectAll}[1][]
-{\begin{trivlist}\item[\hskip \labelsep\small\bfseries Select All Correct Answers:]\hfil\begin{enumerate}}
-{\end{enumerate}\end{trivlist}}
+
+\makeatletter
+
+\define@key{selectAll}{label}{\def\selectall@label{#1}} %note: permanent label to identify answers
+
+\newenvironment{selectAll}[1][]{
+  \setkeys{selectAll}{#1}
+  \begin{trivlist}\item[\hskip \labelsep\small\bfseries Select All Correct Answers:]\hfil\begin{enumerate}
+}{
+  \end{enumerate}\end{trivlist}
+}
+
+\makeatother
 
 %% In the future we need this to (optionally) be desplayed in the
 %% problem, while the actual code lives in the solution. Here is how
