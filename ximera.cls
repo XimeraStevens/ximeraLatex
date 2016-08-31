@@ -391,7 +391,7 @@
 \newcommand{\grdcell}[2][]{
   \setkeys{grdcell}{#1}
   \newline
-  \underset{\scriptstyle\mathrm{Gradarius}}{\fbox{\grd@type~of~\ensuremath{#2}}}
+  \underset{\scriptstyle\mathrm{Gradarius}}{\fbox{\ensuremath{#2}}}
   \newline
 }
 
@@ -406,10 +406,10 @@
 % --------------------------------------------------------------------
 % Hyperlinks to outside documents
 
-\newcommand*{\link}[2][]{#1%
+\newcommand*{\link}[2][]{
 \ifthenelse{\equal{#1}{}}%
-{\footnote{Link: \url{#2}}}%
-{\footnote{See #1 at \url{#2}}}}
+{\href{#2}{#2}}%
+{\href{#2}{#1}}}
                               
 
 %% image environment
