@@ -133,7 +133,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Eliminate some formatting that we'll handle later with CSS
 
-\renewcommand{\maketitle}{}
+\renewcommand{\maketitle}{ }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % dialogue environment
